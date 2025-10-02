@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal themed Portfolio</title>
+  <style>
+   
+    body {
+      margin: 0;
+      font-family: "Courier New", monospace;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .terminal-window {
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #1a1a1a;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      min-height: calc(100vh - 40px);
+      overflow: hidden;
+    }
+    .terminal-header {
+      background: #2d2d2d;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #444;
+    }
+    .control {width:12px;height:12px;border-radius:50%;}
+    .close{background:#ff5f57}.minimize{background:#ffbd2e}.maximize{background:#28ca42}
+    .terminal-title {color:#e0e0e0;font-size:14px;font-weight:bold;}
+    .social-links{display:flex;gap:16px}
+    .social-links a{color:#0f0;font-size:12px;text-decoration:none}
+    .social-links a:hover{color:#0c0;text-decoration:underline}
+    .terminal-body {padding:20px;}
+    .main-container { display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;}
+    .photo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .photo-border {
+    width:200px;height:250px;
+    border:2px solid #0f0;
+    display:flex;align-items:center;justify-content:center;
+    background:#0d1b0d;color:#0f0;font-size:14px;
+  }
+  .photo-border:hover {
+    border-color:#0c0;
+    box-shadow:0 0 10px rgba(0,255,0,.3);
+  }
+    .command-line{margin:8px 0;display:flex;gap:8px;align-items:center}
+    .prompt{color:#0f0;font-weight:bold}.command{color:#fff}
+    .output{margin:0 0 24px 16px;border-left:2px solid #333;padding-left:16px}
+    h1,h2,h3{margin:0 0 8px}
+    h1{color:#0f0;font-size:24px} 
+    h2{color:#fff;font-size:18px}
+    h3{color:#0f0;font-size:18px;border-bottom:1px solid #333;padding-bottom:8px}
+    p{margin:0 0 8px}
+    .file{margin-bottom:4px;color:#e0e0e0}
+    .file:hover{background:rgba(0,255,0,.1);padding-left:8px}
+    .experience-item,.education-item, .project-item{
+      margin:0 0 20px;padding:16px;background:rgba(0,255,0,.05);
+      border-left:3px solid #0f0;border-radius:0 4px 4px 0;
+    }
+    .job-header,.degree-header, .project-header{display:flex;justify-content:space-between;flex-wrap:wrap}
+    .job-header strong,.degree-header strong, .project-header strong{color:#0f0}
+    .period{color:#888;font-size:12px;background:rgba(255,255,255,.1);padding:2px 8px;border-radius:12px}
+    .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+    .skills-column h4{color:#0f0;margin-bottom:12px}
+    .skills-column ul{list-style:none;padding:0}
+    .skills-column li{margin-bottom:8px;padding:8px 12px;background:rgba(0,255,0,.1);border-radius:4px}
+    .skills-column li:hover{background:rgba(0,255,0,.2);transform:translateX(4px)}
+     .contact-form {display:flex;flex-direction:column;gap:12px;}
+    .contact-form input,.contact-form textarea {
+      background:#0a0a0a;
+      border:1px solid #0f0;
+      border-radius:4px;
+      padding:8px;
+      color:#e0e0e0;
+      font-family:"Courier New", monospace;
+    }
+    .contact-form input:focus,.contact-form textarea:focus {
+      outline:none;
+      border-color:#0c0;
+      box-shadow:0 0 5px rgba(0,255,0,.4);
+    }
+    .contact-form button {
+      background:#0f0;
+      border:none;
+      padding:10px;
+      font-family:"Courier New", monospace;
+      color:#000;
+      font-weight:bold;
+      cursor:pointer;
+      border-radius:4px;
+      transition:background .2s;
+    }
+    .blinking-cursor{color:#0f0;font-weight:bold;animation:blink 1s infinite}
+    @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+    @media(max-width:768px){.main-container{grid-template-columns:1fr}}
+  </style>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+  <div class="terminal-window">
+    <div class="terminal-header">
+      <div style="display:flex;gap:8px">
+        <div class="control close"></div>
+        <div class="control minimize"></div>
+        <div class="control maximize"></div>
+      </div>
+      <div class="terminal-title"></div>
+      <div class="social-links">
+        <p>ph. +91 8328090414</p>
+        <a href="https://github.com/brownraven95">GitHub</a>
+        <a href="https://www.instagram.com/gowtham_manubolu?igsh=YzA4enFrdHFhbnMz">Instagram</a>
+        <a href="https://www.linkedin.com/in/manubolu-gowtham-a78a1737a/">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="terminal-body">
+      <div class="main-container">
+        <div class="photo-section">
+          <div class="photo-border">
+            <img src="profilepic.jpeg" style="height:250px;width:200px; display: flex; justify-content: center; align-items: center;">
+          </div>
+        </div>
+        </div>
+
+        <div class="terminal-content">
+          <div class="command-line"><span class="prompt">gowtham-manubolu@HP-OmniBook-5:~$</span><span class="command">whoami</span></div>
+          <div class="output">
+            <h1>Manubolu Gowtham</h1>
+            <h2>Soon to be Full Stack Developer</h2>
+            <p>Passionate developer with  3+ months experience in modern web technologies.</p>
+          </div>
+
+          <div class="command-line"><span class="prompt">gowtham-manubolu@HP-OmniBook-5:~$</span><span class="command">ls -la</span></div>
+          <div class="output file-list">
+            <div class="file">about-me.txt</div>
+            <div class="file">experience.txt</div>
+            <div class="file">education.txt</div>
+            <div class="file">skills.md</div>
+            <div class="file">contact-me.md</div>
+          </div>
+
+          <div class="command-line"><span class="prompt">gowtham-manubolu@HP-OmniBook-5:~$</span><span class="command">cat about-me.txt</span></div>
+          <div class="output">
+            <h3>About Me</h3>
+            <p>Hello! I'm a passionate guy who is gonna become a Full Stack Developer in like, max 1 year.
+               Gonna keep updating this portfolio as I learn new skills and complete projects.
+               As a new undergrad student I guess my experience is limited but I'm eager to learn and grow.
+
+            </p>
+          </div>
+             <div class="command-line"><span class="prompt">gowtham@portfolio:~$</span><span class="command">cat projects.txt</span></div>
+          <div class="output">
+            <h3>Projects</h3>
+            <div class="project-item">
+              <div class="project-header"><strong>Portfolio Website</strong><span class="period">2025</span></div>
+              <p>Built this terminal-inspired portfolio using HTML and CSS.</p>
+            </div>
+            <div class="project-item">
+              <div class="project-header"><strong>2D Python Game</strong><span class="period">2025</span></div>
+              <p>Made a simple racing game with Pygame.</p>
+            </div>
+          </div>
+          <div class="command-line"><span class="prompt">gowtham-manubolu@HP-OmniBook-5:~$</span><span class="command">cat experience.txt</span></div>
+          <div class="output">
+            <h3>Work Experience</h3>
+            <div class="experience-item">
+              <div class="job-header"><strong>Professional Learner</strong><span class="period">2025 - Present</span></div>
+              <p>I am currenty confident enough to build basic websites and write simple arrays in java.
+                Made this portfolio using HTML and CSS.
+                Made a simpe 2d game in pygame using python.
+              </p>
+            </div>
+            <div class="experience-item">
+              <div class="job-header"><strong>Hackathons Enthusiast</strong><span class="period">2022 - 2023</span></div>
+              <p>Attended DayDream GameJam.</p>
+              <p>Gonna participate in as many as possible in the future.</p>
+            </div>
+          </div>
+
+          <div class="command-line"><span class="prompt">gowtham-manubolu@HP-OmniBook-5:~$</span><span class="command">cat education.txt</span></div>
+          <div class="output">
+            <h3>Education</h3>
+            <div class="education-item">
+              <div class="degree-header"><strong>MSc in Computer Science</strong><span class="period">2028 - 2029</span></div>
+              <p>Woolf University</p>    
+               <div class="degree-header"><strong>BSc in Computer Science</strong><span class="period">2025 - 2028</span></div>
+              <p>BITS University</p>   
+               <div class="degree-header"><strong>Undergrad Course</strong><span class="period">2025 - 2029</span></div>
+              <p>Scaler School of Technology</p>      
+                
+              <div class="degree-header"><strong>MPC 11th & 12th</strong><span class="period">2023 - 2025</span></div>
+              <p>Narayana Junior College</p>    
+               <div class="degree-header"><strong>Schooling</strong><span class="period">2013 - 2023</span></div>
+              <p>Sri Chaitanya High School</p>                         
+                               
+            </div>               
+            </div>
+          </div>
+         
+          
+
+          <div class="command-line">
+            <span class="prompt">gowtham-manubolu@HP-OmniBook-5:~$</span>
+            <span class="command">du -sh skills.md</span>
+        </div>
+          <div class="output">
+            <h3>Skills</h3>
+            <div class="skills-grid">
+              <div class="skills-column">
+                <h4>Languages</h4>
+                <ul>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                </ul>
+              </div>
+              <div class="skills-column">
+                <h4>Tools</h4>
+                <ul>
+                    <li>Git/GitHub</li>
+                    <li>Docker</li>
+                    <li>Linux</li>
+                    <li>VS Code</li>
+                    <li>Canva</li>
+                </ul>
+              </div>
+            </div>
+            <div class="skills-column">
+            <h4>Soft SKills</h4>
+             <p>Breaking down difficult tasks into doable simple steps</p>
+             <p>Open to learning anything I don't know</p>
+            </div>
+          </div>
+            <div class="command-line"><span class="prompt">gowtham@portfolio:~$</span><span class="command">cat contact-me.md</span></div>
+          <div class="output">
+            <h3>Contact Me</h3>
+            <div class="contact-box">
+              <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="command-line">
+            <span class="prompt">gowtham-manubolu@HP-OmniBook-5:~$</span>
+            <span class="blinking-cursor">|</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer style="width:100%;text-align:center;padding:16px 0;color:#888;background:#181818;font-size:14px;">
+    &copy; 2025 Manubolu Gowtham. All rights reserved.
+  </footer>
+</body>
+</html>
